@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  mysql-development:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: test
+    volumes:
+      - .data:/var/lib/mysql
+
+    ports:
+      - "3306:3306"
+# dotnet ef dbcontext scaffold "Server=localhost;test Id=root;Password=test;Database=test" "Pomelo.EntityFrameworkCore.MySql" -c MyDbContext
+#root@localhost
+# dotnet ef dbcontext scaffold "Server=127.0.0.1;PORT=3306;User Id=root;Password=test;Database=test" "Pomelo.EntityFrameworkCore.MySql" -c MyDbContext
